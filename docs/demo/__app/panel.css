@@ -379,3 +379,43 @@ button.danger:hover {
   background: rgba(255, 255, 255, 0.06);
   border-radius: 999px;
 }
+
+
+/* -----------------------------
+   Overview charts
+----------------------------- */
+.overviewChart {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+  box-shadow: var(--shadow);
+}
+
+.overviewMiniGrid {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 10px;
+  margin: 10px 0 12px;
+}
+
+.overviewChart canvas,
+.overviewMiniGrid canvas {
+  display: block;
+}
+
+.miniChart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.miniLabel {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.2px;
+  padding-left: 2px;
+}
+

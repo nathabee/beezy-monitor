@@ -5,15 +5,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="__app/panel.css" />
-  <title>Chrome Extension Template — Manifest V3</title>
+  <title>Beezy Monitor</title>
 </head>
 
 <body>
   <div id="appRoot">
     <div class="wrap">
-      <h1>Chrome Extension Template — Manifest V3</h1>
+      <h1>Beezy Monitor</h1>
 
       <div class="tabs" role="tablist" aria-label="Panel tabs">
+
+        <button id="tabOverview" class="tab" role="tab" aria-selected="false" type="button">
+          Overview
+        </button>
+
+
         <button id="tabSettings" class="tab is-active" role="tab" aria-selected="true" type="button">
           Settings
         </button>
@@ -22,6 +28,74 @@
           Logs
         </button>
       </div>
+
+      <!-- =========================
+     OVERVIEW VIEW
+     ========================= -->
+      <section id="viewOverview" class="view" role="tabpanel" aria-labelledby="tabOverview" hidden>
+        <p class="muted">
+          Live health snapshot of the current page.
+        </p>
+
+        <div class="row">
+          <button id="btnOvStart" type="button">Start</button>
+          <button id="btnOvStop" type="button">Stop</button>
+          <span id="ovStatus" class="status">Idle</span>
+        </div>
+
+        <div class="overviewChart">
+          <canvas id="ovStressChart" width="600" height="160"></canvas>
+        </div>
+
+
+        <div class="overviewMiniGrid">
+          <div class="miniChart">
+            <canvas id="ovDomChart" width="140" height="40"></canvas>
+            <div class="miniLabel">DOM</div>
+          </div>
+
+          <div class="miniChart">
+            <canvas id="ovNetChart" width="140" height="40"></canvas>
+            <div class="miniLabel">Network</div>
+          </div>
+
+          <div class="miniChart">
+            <canvas id="ovErrChart" width="140" height="40"></canvas>
+            <div class="miniLabel">Errors</div>
+          </div>
+
+          <div class="miniChart">
+            <canvas id="ovLongChart" width="140" height="40"></canvas>
+            <div class="miniLabel">Long tasks</div>
+          </div>
+        </div>
+
+
+        <div class="overviewGrid">
+          <div class="overviewCard">
+            <div class="overviewTitle">DOM nodes</div>
+            <div id="ovDomCount" class="overviewValue">—</div>
+            <div id="ovDomDelta" class="overviewDelta muted"></div>
+          </div>
+
+          <div class="overviewCard">
+            <div class="overviewTitle">Resources / min</div>
+            <div id="ovResCount" class="overviewValue">—</div>
+          </div>
+
+          <div class="overviewCard">
+            <div class="overviewTitle">JS errors / min</div>
+            <div id="ovErrorCount" class="overviewValue">—</div>
+          </div>
+
+          <div class="overviewCard">
+            <div class="overviewTitle">Long tasks / min</div>
+            <div id="ovLongTaskCount" class="overviewValue">—</div>
+          </div>
+        </div>
+      </section>
+
+
 
       <!-- =========================
            SETTINGS VIEW
@@ -108,8 +182,8 @@
               Version: <strong id="settingsVersion">—</strong>
             </div>
 
-            <a id="settingsGitHubLink" class="subtle" href="https://github.com/nathabee/extension-generic/issues" target="_blank"
-              rel="noreferrer">GitHub</a>
+            <a id="settingsGitHubLink" class="subtle" href="https://github.com/nathabee/beezy-monitor/issues"
+              target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </details>
       </section>
