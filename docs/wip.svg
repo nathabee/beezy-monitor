@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="32">
+  <rect x="0" y="0" width="100%" height="32" rx="16" fill="#171c28"/>
+  <text x="70" y="21" text-anchor="left"
+        font-size="30"
+        font-family="system-ui, -apple-system, Segoe UI, Roboto"
+        fill="#e5e7eb">
+    🚧 Work in progress
+        <animate
+      attributeName="opacity"
+      values="0.3;1;0.3"
+      dur="1.6s"
+      repeatCount="indefinite" />
+  </text>
+</svg>
+
+
+ 

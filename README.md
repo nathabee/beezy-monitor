@@ -1,3 +1,6 @@
+<img src="./docs/wip.svg" alt="Work in progress" width="100%" />
+
+
 # <img src="./docs/icon.svg" alt="Beezy Monitor Icon" width="60" style="vertical-align:middle; margin-right:20px;"> Beezy Monitor
 
 **Beezy Monitor** is a Chrome **DevTools extension** designed to give developers and developer-managers a **clear, immediate understanding** of what is happening inside a web page.
